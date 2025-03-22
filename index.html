@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Bienvenido al grupo 00</title>
+  <style>
+    /* Estilos para la sección de video */
+    #mainDiv {
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    /* Estilos para el chat */
+    #chat {
+      width: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    #messages {
+      height: 200px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+    .message {
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+    .sent {
+      background: #dcf8c6;
+      text-align: right;
+    }
+    .received {
+      background: #ececec;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div id='mainDiv'>
+    <table>
+      <tr>
+        <th>Local video</th>
+        <th>'Remote' video</th>
+      </tr>
+      <tr>
+        <td>
+          <video id="localVideo" muted autoplay></video>
+        </td>
+        <td>
+          <video id="remoteVideo" autoplay></video>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Sección del Chat -->
+  <div id="chat">
+    <div id="messages"></div>
+    <input type="text" id="dataChannelSend" placeholder="Escribe un mensaje..." />
+    <button id="sendButton">Enviar</button>
+  </div>
+
+  <script src='/socket.io/socket.io.js'></script>
+  <script src='js/completeNodeClientWithDataChannel.js'></script>
+</body>
+</html>
